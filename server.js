@@ -7,12 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.delete('/post/:id', (req, res) => {
-    //Database stuff
-
-    res.json({ msg: `Post ${req.params.id} deleted`});
-
-});
+app.use(express.static('public'));
 
 
 app.listen(5000, () => console.log('Server started on 5000'));
